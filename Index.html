@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Joyeux anniversaire Ing MAINTENANCIER MZA ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffe4c4);
+    }
+
+    .carte {
+      width: 90%;
+      max-width: 400px;
+      padding: 35px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #e83e8c;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 50px;
+      background: #ff4f9a;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 79, 154, 0.4);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .message {
+      display: none;
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #e83e8c;
+    }
+
+    .element {
+      position: fixed;
+      bottom: -40px;
+      font-size: 28px;
+      pointer-events: none;
+      animation: monter 4s linear forwards;
+      z-index: 5;
+    }
+
+    @keyframes monter {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="carte">
+
+    <div style="font-size:55px;">🎂</div>
+
+    <h1>Joyeux anniversaire ! 🎉</h1>
+
+    <p>
+      Aujourd'hui est une journée spéciale pour ING MADJIVINA ZAKARIA ABATCHEGUE. ❤️
+    </p>
+
+    <button onclick="lancerLaSurprise()">
+      Clique ici pour ta surprise 💕
+    </button>
+
+    <div class="message" id="message">
+      🎉 Joyeux anniversaire ING MZA ! 🎂<br>
+      Que cette nouvelle année soit remplie de bonheur,
+      d'amour et de beaux moments ! ❤️🌸
+    </div>
+
+  </div>
+
+  <script>
+    function lancerLaSurprise() {
+
+      document.getElementById("message").style.display = "block";
+
+      const elements = [
+        "❤️", "💕", "💖", "💗",
+        "🌸", "🌷", "🌹", "🌺",
+        "🎉", "✨", "🎈", "💐"
+      ];
+
+      for (let i = 0; i < 45; i++) {
+
+        const element = document.createElement("div");
+
+        element.className = "element";
+
+        element.innerHTML =
+          elements[Math.floor(Math.random() * elements.length)];
+
+        element.style.left =
+          Math.random() * 100 + "vw";
+
+        element.style.animationDuration =
+          (3 + Math.random() * 3) + "s";
+
+        element.style.fontSize =
+          (20 + Math.random() * 25) + "px";
+
+        document.body.appendChild(element);
+
+        setTimeout(() => {
+          element.remove();
+        }, 6000);
+      }
+    }
+  </script>
+
+</body>
+</html>
