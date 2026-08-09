@@ -4,79 +4,249 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Joyeux anniversaire Ing MAINTENANCIER MZA ❤️</title>
+  <title>🎂 Joyeux anniversaire — ING MZA</title>
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffe4c4);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, #ffb6d9, transparent 35%),
+        radial-gradient(circle at bottom right, #ff8fb8, transparent 35%),
+        linear-gradient(135deg, #210018, #5b123d, #160014);
+      padding: 25px 15px;
+      color: white;
     }
 
+    /* Lumières d'arrière-plan */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+      z-index: 0;
+      animation: lumiere 6s infinite alternate;
+    }
+
+    body::before {
+      background: #ff4f9a;
+      top: -80px;
+      left: -80px;
+    }
+
+    body::after {
+      background: #ffccdf;
+      bottom: -80px;
+      right: -80px;
+      animation-delay: 2s;
+    }
+
+    @keyframes lumiere {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.4);
+      }
+    }
+
+    /* Carte principale */
     .carte {
-      width: 90%;
-      max-width: 400px;
-      padding: 35px 20px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 25px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      padding: 18px;
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 105, 180, 0.25);
       z-index: 2;
+      animation: apparition 1.2s ease;
+    }
+
+    @keyframes apparition {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Image */
+    .photo-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .photo-container img {
+      width: 100%;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .photo-container:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Effet brillant */
+    .photo-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+      );
+      transform: skewX(-20deg);
+      animation: brillant 4s infinite;
+    }
+
+    @keyframes brillant {
+      0% {
+        left: -100%;
+      }
+
+      45%, 100% {
+        left: 150%;
+      }
+    }
+
+    .contenu {
+      text-align: center;
+      padding: 25px 10px 10px;
+    }
+
+    .emoji {
+      font-size: 55px;
+      animation: rebond 2s infinite;
+    }
+
+    @keyframes rebond {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: #e83e8c;
+      margin-top: 10px;
+      font-size: clamp(28px, 7vw, 40px);
+      background: linear-gradient(90deg, #fff, #ffb6d9, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
     }
 
-    p {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.5;
+    .nom {
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffd1e5;
     }
 
+    .intro {
+      margin-top: 15px;
+      color: #fff0f7;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* Bouton */
     button {
-      margin-top: 20px;
-      padding: 16px 28px;
+      margin-top: 22px;
+      padding: 15px 28px;
       border: none;
       border-radius: 50px;
-      background: #ff4f9a;
+      background: linear-gradient(135deg, #ff3f91, #ff76b5);
       color: white;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 17px;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 79, 154, 0.4);
+      box-shadow:
+        0 8px 25px rgba(255, 63, 145, 0.45);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow:
+        0 12px 35px rgba(255, 63, 145, 0.65);
     }
 
     button:active {
       transform: scale(0.95);
     }
 
+    /* Message */
     .message {
-      display: none;
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #e83e8c;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 1s ease;
+      margin-top: 0;
     }
 
+    .message.active {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 25px;
+    }
+
+    .message-box {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    .signature {
+      margin-top: 15px;
+      color: #ffb5d7;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Éléments flottants */
     .element {
       position: fixed;
-      bottom: -40px;
-      font-size: 28px;
+      bottom: -50px;
       pointer-events: none;
-      animation: monter 4s linear forwards;
-      z-index: 5;
+      z-index: 10;
+      animation: monter linear forwards;
     }
 
     @keyframes monter {
@@ -86,8 +256,35 @@
       }
 
       100% {
-        transform: translateY(-110vh) rotate(360deg);
+        transform: translateY(-115vh) rotate(360deg);
         opacity: 0;
+      }
+    }
+
+    /* Petit texte en bas */
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+    }
+
+    @media (max-width: 480px) {
+      .carte {
+        padding: 12px;
+        border-radius: 24px;
+      }
+
+      .contenu {
+        padding-top: 20px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      button {
+        width: 100%;
       }
     }
   </style>
@@ -95,64 +292,142 @@
 
 <body>
 
-  <div class="carte">
+  <main class="carte">
 
-    <div style="font-size:55px;">🎂</div>
-
-    <h1>Joyeux anniversaire ! 🎉</h1>
-
-    <p>
-      Aujourd'hui est une journée spéciale pour ING MADJIVINA ZAKARIA ABATCHEGUE. ❤️
-    </p>
-
-    <button onclick="lancerLaSurprise()">
-      Clique ici pour ta surprise 💕
-    </button>
-
-    <div class="message" id="message">
-      🎉 Joyeux anniversaire ING MZA ! 🎂<br>
-      Que cette nouvelle année soit remplie de bonheur,
-      d'amour et de beaux moments ! ❤️🌸
+    <!-- IMAGE D'ANNIVERSAIRE -->
+    <div class="photo-container">
+      <img
+        src="Screenshot_20260809_103439.jpg"
+        alt="Carte d'anniversaire de ING MZA"
+      >
     </div>
 
-  </div>
+    <section class="contenu">
+
+      <div class="emoji">🎂</div>
+
+      <h1>Joyeux anniversaire !</h1>
+
+      <div class="nom">
+        ING MADJIVINA ZAKARIA ABATCHEGUE ❤️
+      </div>
+
+      <p class="intro">
+        Aujourd'hui n'est pas un jour comme les autres...
+        C'est le commencement d'une nouvelle année de ta vie,
+        remplie de nouvelles possibilités, de nouveaux rêves
+        et de nouvelles victoires. ✨
+      </p>
+
+      <button onclick="lancerLaSurprise()">
+        💌 Ouvrir ma surprise
+      </button>
+
+      <div class="message" id="message">
+
+        <div class="message-box">
+
+          🎉 <strong>Une nouvelle version de moi-même vient de naître !</strong> 🎉
+
+          <br><br>
+
+          Une année de plus, c'est une année de plus d'expérience,
+          de sagesse, de courage et de détermination.
+
+          <br><br>
+
+          Que cette nouvelle étape soit remplie de
+          <strong>bonheur, santé, réussite, paix et prospérité.</strong>
+
+          <br><br>
+
+          Que chaque difficulté devienne une leçon,
+          chaque échec une force et chaque réussite
+          une raison de continuer à avancer.
+
+          <br><br>
+
+          🚀 <strong>Objectif : devenir une meilleure version de moi-même.</strong>
+
+          <div class="signature">
+            ❤️ Joyeux anniversaire à moi-même — MZA
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer">
+        ✨ Une nouvelle année • De nouveaux objectifs • De nouvelles victoires ✨
+      </div>
+
+    </section>
+
+  </main>
+
 
   <script>
+
     function lancerLaSurprise() {
 
-      document.getElementById("message").style.display = "block";
+      /* Afficher le message */
+      document
+        .getElementById("message")
+        .classList.add("active");
 
+      /* Modifier le texte du bouton */
+      const bouton = document.querySelector("button");
+      bouton.innerHTML = "🎉 Surprise ouverte ! ❤️";
+
+      /* Liste des éléments */
       const elements = [
-        "❤️", "💕", "💖", "💗",
-        "🌸", "🌷", "🌹", "🌺",
-        "🎉", "✨", "🎈", "💐"
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💓",
+        "🌸",
+        "🌷",
+        "🌹",
+        "🌺",
+        "🎉",
+        "✨",
+        "🎈",
+        "💐",
+        "🎂",
+        "🥳"
       ];
 
-      for (let i = 0; i < 45; i++) {
+      /* Création des éléments */
+      for (let i = 0; i < 70; i++) {
 
         const element = document.createElement("div");
 
         element.className = "element";
 
         element.innerHTML =
-          elements[Math.floor(Math.random() * elements.length)];
+          elements[
+            Math.floor(Math.random() * elements.length)
+          ];
 
         element.style.left =
           Math.random() * 100 + "vw";
 
         element.style.animationDuration =
-          (3 + Math.random() * 3) + "s";
+          (3 + Math.random() * 4) + "s";
 
         element.style.fontSize =
-          (20 + Math.random() * 25) + "px";
+          (18 + Math.random() * 28) + "px";
 
         document.body.appendChild(element);
 
         setTimeout(() => {
           element.remove();
-        }, 6000);
+        }, 7500);
       }
+
     }
+
   </script>
 
 </body>
