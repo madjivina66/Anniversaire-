@@ -1,8 +1,6 @@
-# Anniversaire-
-Ma petite surprise d'anniversaire ❤️
-# 🎂 Joyeux anniversaire à moi !
-# 🎂 Joyeux Anniversaire — Ing MZA ❤️
-
+MADJIVINA ZAKARIA ABATCHEGUE vous remercie sincèrement pour vos multiples bénédictions à l'issue de mon anniversaire 🙏🙏 
+Que Dieu vous bénisse abondamment 
+ING Maintenancier MZA vous bénit 🙏 
 Bienvenue sur ma petite carte d'anniversaire interactive. 🎉
 
 Cette page a été créée spécialement pour célébrer une nouvelle année de vie de :
